@@ -1,26 +1,55 @@
-# Selenium Automation Framework
+# Selenium WebDriver Automation Test Suite
 
-This project is a Selenium WebDriver automation framework built using Java, TestNG, and Maven following the Page Object Model (POM) design pattern.
+A Java-based test automation framework using Selenium WebDriver, TestNG, and Page Object Model (POM).
 
-## 🔧 Tech Stack
-- Java
-- Selenium WebDriver
-- TestNG
+## Tech Stack
+- Java 17
+- Selenium WebDriver 4.18.1
+- TestNG 7.9.0
+- WebDriverManager 5.7.0
 - Maven
 
-## 📂 Project Features
-- Login automation test cases
-- Inventory page validation
-- Add to cart test
-- Positive and negative test scenarios
-- Structured using POM architecture
+## Project Structure
+```
+SeleniumAutomation/
+├── src/test/java/
+│   ├── pages/          # Page Object Model classes
+│   │   ├── LoginPage.java
+│   │   └── InventoryPage.java
+│   ├── tests/          # Test cases
+│   │   ├── LoginTest.java
+│   │   └── InventoryTest.java
+│   └── utils/          # Base setup
+│       └── BaseTest.java
+├── testng.xml          # TestNG suite configuration
+└── pom.xml             # Maven dependencies
+```
 
-## ▶️ How to Run
-Clone the repository and run:
+## Test Cases
+| Test | Description |
+|------|-------------|
+| testValidLogin | Valid credentials redirect to inventory |
+| testInvalidLogin | Invalid credentials show error message |
+| testEmptyLogin | Empty fields show error message |
+| testInventoryPageTitle | Inventory page title is "Products" |
+| testAddToCart | Add item to cart updates cart count to 1 |
+
+## How to Run
+
+### Prerequisites
+- Java JDK 17+
+- Maven installed
+- Google Chrome browser
+
+### Run via Maven
+```bash
 mvn test
+```
 
-## 📌 Website Tested
-https://www.saucedemo.com/
+### Run via Eclipse/VS Code
+- Right-click `testng.xml` → Run As → TestNG Suite
 
-## 👨‍💻 Author
-Gowtham Kilari
+## Website Under Test
+**https://www.saucedemo.com**
+- Username: `standard_user`
+- Password: `secret_sauce`
